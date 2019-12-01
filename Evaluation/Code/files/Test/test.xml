@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<GateDocument version="3">
+<!-- The document's features-->
+
+<GateDocumentFeatures>
+<Feature>
+  <Name className="java.lang.String">gate.SourceURL</Name>
+  <Value className="java.lang.String">file:/C:/Gate/New%20folder/biodiv-gold-standard/data/Pawan/dryad/marked/203055.xml</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">MimeType</Name>
+  <Value className="java.lang.String">text/xml</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">anndiffsteps</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</GateDocumentFeatures>
+<!-- The document content area with serialized nodes -->
+
+<TextWithNodes><Node id="0"/>
+	<Node id="2"/>Data from: Integrating life history traits into predictive phylogeography<Node id="75"/>
+	<Node id="77"/>Sullivan, Jack<Node id="91"/>
+	<Node id="93"/>Smith, Megan L.<Node id="108"/>
+	<Node id="110"/>Espindola, Anahi<Node id="126"/>
+	<Node id="128"/>Ruffley, Megan<Node id="142"/>
+	<Node id="144"/>Rankin, Andrew<Node id="158"/>
+	<Node id="160"/>Tank, David<Node id="171"/>
+	<Node id="173"/>Carstens, Bryan<Node id="188"/>
+	<Node id="190"/>Comparative Phylogeography<Node id="216"/>
+	<Node id="218"/>Random <Node id="225"/>Forest<Node id="231"/>
+	<Node id="233"/>Machine Learning<Node id="249"/>
+	<Node id="251"/>Cryptic Diversity<Node id="268"/>
+	<Node id="270"/>Predictive phylogeography seeks to aggregate genetic, environmental and taxonomic data from multiple species in order to make predictions about unsampled taxa using machine-learning techniques such as Random <Node id="478"/>Forests<Node id="485"/>.  To date, <Node id="497"/>organismal trait<Node id="513"/> data have infrequently been incorporated into predictive frameworks due to difficulties inherent to the scoring of trait data across a taxonomically broad set of taxa. We refine predictive frameworks from two North American systems, the inland <Node id="758"/>temperate<Node id="767"/> <Node id="768"/>rainforests<Node id="779"/> <Node id="780"/>of the Pacific Northwest (PNW) and the Southwestern Aridlands (SWAL), by incorporating a number of <Node id="879"/>organismal trait<Node id="895"/> variables. Our results indicate that incorporating life history traits as predictor variables improves the performance of the supervised machine-learning approach to predictive phylogeography, especially for the SWAL system, in which predictions made from only taxonomic and <Node id="1171"/>climate<Node id="1178"/> variables meets only moderate success. In particular, traits related to <Node id="1251"/>reproduction<Node id="1263"/> (e.g., reproductive mode; clutch <Node id="1297"/>size<Node id="1301"/>) and trophic level appear to be particularly informative to the predictive framework. Predictive frameworks offer an important mechanism for integration of <Node id="1458"/>organismal trait<Node id="1474"/>, environmental data, and genetic data in phylogeographic studies.<Node id="1540"/>
+	<Node id="1542"/>2019-01-17T16:35:02Z<Node id="1562"/>
+	<Node id="1564"/>2019-01-17T16:35:02Z<Node id="1584"/>
+	<Node id="1586"/>2019-04-29<Node id="1596"/>
+	<Node id="1598"/>Article<Node id="1605"/>
+	<Node id="1607"/>doi:10.5061/dryad.s6v210k<Node id="1632"/>
+	<Node id="1634"/>Sullivan J, Smith ML, Espíndola A, Ruffley M, Rankin A, Tank D, Carstens B (2019) Integrating life history traits into predictive phylogeography. Molecular Ecology.<Node id="1799"/>
+	<Node id="1801"/>http://hdl.handle.net/10255/dryad.203055<Node id="1841"/>
+	<Node id="1843"/>doi:10.5061/dryad.s6v210k/1<Node id="1870"/>
+	<Node id="1872"/>doi:10.5061/dryad.s6v210k/2<Node id="1899"/>
+	<Node id="1901"/>doi:10.5061/dryad.s6v210k/3<Node id="1928"/>
+	<Node id="1930"/>doi:10.5061/dryad.s6v210k/4<Node id="1957"/>
+	<Node id="1959"/>doi:10.1111/mec.15029<Node id="1980"/>
+	<Node id="1982"/>Pacific Northwest<Node id="1999"/>
+<Node id="2000"/></TextWithNodes>
+<!-- The default annotation set -->
+
+<AnnotationSet>
+</AnnotationSet>
+
+<!-- Named annotation set -->
+
+<AnnotationSet Name="Original markups">
+<Annotation Id="0" Type="oai_dc:dc" StartNode="0" EndNode="2000">
+<Feature>
+  <Name className="java.lang.String">xsi:schemaLocation</Name>
+  <Value className="java.lang.String">http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">xmlns:xsi</Name>
+  <Value className="java.lang.String">http://www.w3.org/2001/XMLSchema-instance</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">xmlns:oai_dc</Name>
+  <Value className="java.lang.String">http://www.openarchives.org/OAI/2.0/oai_dc/</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">xmlns:dc</Name>
+  <Value className="java.lang.String">http://purl.org/dc/elements/1.1/</Value>
+</Feature>
+</Annotation>
+<Annotation Id="1" Type="dc:title" StartNode="2" EndNode="75">
+</Annotation>
+<Annotation Id="2" Type="dc:creator" StartNode="77" EndNode="91">
+</Annotation>
+<Annotation Id="3" Type="dc:creator" StartNode="93" EndNode="108">
+</Annotation>
+<Annotation Id="4" Type="dc:creator" StartNode="110" EndNode="126">
+</Annotation>
+<Annotation Id="5" Type="dc:creator" StartNode="128" EndNode="142">
+</Annotation>
+<Annotation Id="6" Type="dc:creator" StartNode="144" EndNode="158">
+</Annotation>
+<Annotation Id="7" Type="dc:creator" StartNode="160" EndNode="171">
+</Annotation>
+<Annotation Id="8" Type="dc:creator" StartNode="173" EndNode="188">
+</Annotation>
+<Annotation Id="9" Type="dc:subject" StartNode="190" EndNode="216">
+</Annotation>
+<Annotation Id="10" Type="dc:subject" StartNode="218" EndNode="231">
+</Annotation>
+<Annotation Id="11" Type="dc:subject" StartNode="233" EndNode="249">
+</Annotation>
+<Annotation Id="12" Type="dc:subject" StartNode="251" EndNode="268">
+</Annotation>
+<Annotation Id="13" Type="dc:description" StartNode="270" EndNode="1540">
+</Annotation>
+<Annotation Id="14" Type="dc:date" StartNode="1542" EndNode="1562">
+</Annotation>
+<Annotation Id="15" Type="dc:date" StartNode="1564" EndNode="1584">
+</Annotation>
+<Annotation Id="16" Type="dc:date" StartNode="1586" EndNode="1596">
+</Annotation>
+<Annotation Id="17" Type="dc:type" StartNode="1598" EndNode="1605">
+</Annotation>
+<Annotation Id="18" Type="dc:identifier" StartNode="1607" EndNode="1632">
+</Annotation>
+<Annotation Id="19" Type="dc:identifier" StartNode="1634" EndNode="1799">
+</Annotation>
+<Annotation Id="20" Type="dc:identifier" StartNode="1801" EndNode="1841">
+</Annotation>
+<Annotation Id="21" Type="dc:relation" StartNode="1843" EndNode="1870">
+</Annotation>
+<Annotation Id="22" Type="dc:relation" StartNode="1872" EndNode="1899">
+</Annotation>
+<Annotation Id="23" Type="dc:relation" StartNode="1901" EndNode="1928">
+</Annotation>
+<Annotation Id="24" Type="dc:relation" StartNode="1930" EndNode="1957">
+</Annotation>
+<Annotation Id="25" Type="dc:relation" StartNode="1959" EndNode="1980">
+</Annotation>
+<Annotation Id="26" Type="dc:coverage" StartNode="1982" EndNode="1999">
+</Annotation>
+</AnnotationSet>
+
+<!-- Named annotation set -->
+
+<AnnotationSet Name="Nora">
+<!--Correct-->
+<Annotation Id="33" Type="Environment" StartNode="225" EndNode="231"></Annotation>
+<Annotation Id="34" Type="Environment" StartNode="478" EndNode="485"></Annotation>
+<Annotation Id="40" Type="Environment" StartNode="1171" EndNode="1178"></Annotation>
+<Annotation Id="39" Type="Process" StartNode="1171" EndNode="1178"></Annotation>
+<Annotation Id="41" Type="Quality" StartNode="1297" EndNode="1301"></Annotation>
+<Annotation Id="55" Type="Process" StartNode="1251" EndNode="1263"></Annotation>  <!--Y-->
+
+<!--Partials-->
+<Annotation Id="57" Type="Environment" StartNode="478" EndNode="480"></Annotation>
+
+<!--Spurious-->
+<Annotation Id="35" Type="Quality" StartNode="497" EndNode="513"></Annotation>
+<Annotation Id="36" Type="Quality" StartNode="758" EndNode="767"></Annotation>
+<Annotation Id="38" Type="Quality" StartNode="879" EndNode="895"></Annotation>
+<Annotation Id="42" Type="Quality" StartNode="1458" EndNode="1474"></Annotation>
+
+
+<!--Duplicates-->
+<Annotation Id="37" Type="Environment" StartNode="768" EndNode="779"></Annotation> <!--X-->
+<Annotation Id="49" Type="Environment" StartNode="768" EndNode="779"></Annotation> <!--X-->
+<Annotation Id="44" Type="Process" StartNode="1251" EndNode="1263"></Annotation> <!--Y-->
+<Annotation Id="56" Type="Process" StartNode="1251" EndNode="1263"></Annotation> <!--Y-->
+
+</AnnotationSet>
+
+<!-- Named annotation set -->
+
+<AnnotationSet Name="goldStandard">
+<!--Correct-->
+<Annotation Id="51" Type="Environment" StartNode="225" EndNode="231"></Annotation>
+<Annotation Id="47" Type="Environment" StartNode="478" EndNode="485"></Annotation>
+<Annotation Id="48" Type="Environment" StartNode="1171" EndNode="1178"></Annotation>
+<Annotation Id="52" Type="Process" StartNode="1171" EndNode="1178"></Annotation>
+<Annotation Id="54" Type="Quality" StartNode="1297" EndNode="1301"></Annotation>
+<Annotation Id="53" Type="Process" StartNode="1251" EndNode="1263"></Annotation>
+
+
+<!--Missing-->
+<Annotation Id="50" Type="Environment" StartNode="758" EndNode="780"></Annotation>
+
+</AnnotationSet>
+
+</GateDocument>
+

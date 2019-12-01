@@ -1,0 +1,5 @@
+ID,Correct,Missing,Spurious,Partial,Pr,Recall,F-Score
+Environment,120.0,41.0,41.0,5.0,0.738,0.738,0.738
+Material,24.0,7.0,27.0,0.0,0.471,0.774,0.586
+Process,4.0,27.0,3.0,6.0,0.538,0.189,0.28
+Quality,89.0,35.0,79.0,2.0,0.529,0.714,0.608

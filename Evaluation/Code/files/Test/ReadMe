@@ -1,0 +1,13 @@
+ 
+test.xml is originally dryad_203055 and manually modified for testing various test cases
+
+Tests covered:
+ 
+ *duplicates annotations (Pass)
+ *counts of the following: (Pass)
+    * correct
+    * missing
+    * superious 
+    * partials
+ * Feature ignored (Pass)
+    
