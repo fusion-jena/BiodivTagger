@@ -1,0 +1,22 @@
+Phase: CHEBI
+Input: Lookup 
+
+Options: control = brill
+
+Rule: ChebiToUrlAnnotation
+(
+{Lookup}
+
+):mention
+-->
+:mention{
+	
+           AnnotationSet set = bindings.get("mention");
+           Annotation chebiAnn = set.iterator().next();
+	  
+		   FeatureMap features = chebiAnn.getFeatures();
+		   outputAS.add(set.firstNode(), set.lastNode(), "CHEBI", features);
+		
+		
+	  inputAS.remove(chebiAnn);	
+}

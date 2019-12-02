@@ -1,0 +1,15 @@
+Phase: CleanUp
+Input: Lookup
+
+Options: control = all
+
+Rule: CleanUpLookup
+(
+{Lookup}
+):mention
+-->
+:mention{
+           AnnotationSet set = bindings.get("mention");
+           Annotation ann = set.iterator().next();
+           inputAS.remove(ann);
+}

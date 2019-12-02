@@ -1,0 +1,21 @@
+Phase: Quality
+Input: Lookup Token Root
+
+Options: control = all
+
+Rule: QualityToUrlAnnotation
+Priority:20
+(
+{Lookup, Token.category == NN, !Root} | {Lookup, Token.category == NNS, !Root} | {Lookup, Token.category == JJ, !Root}
+):mention
+-->
+:mention.Quality = {class = :mention.Lookup.class, inst = :mention.Lookup.inst}
+
+Rule: Root
+Priority:25
+(
+{Lookup, Root}
+):mention
+-->
+:mention.Quality = {class = :mention.Lookup.class, inst = :mention.Lookup.inst, rule = "Root"}
+

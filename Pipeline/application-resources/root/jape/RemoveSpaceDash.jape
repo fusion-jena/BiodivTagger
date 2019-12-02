@@ -1,0 +1,43 @@
+Imports: { 
+import static gate.Utils.*;
+}
+
+Phase: RemoveSpaceDash
+Input: Environment Material Quality Process 
+
+Options: control = appelt
+
+Rule: RemoveSpaceDash
+(
+{Environment} | {Material} | {Quality} | {Process}
+
+):mention
+-->
+:mention{
+  AnnotationSet set = bindings.get("mention");
+  Annotation ann = set.iterator().next();
+  
+  try{
+     String text = doc.getContent().getContent(ann.getStartNode().getOffset(),ann.getEndNode().getOffset()).toString().toLowerCase();
+  
+     if(text!=null && text.length() > 1){
+       String lastCharacter = text.substring(text.length()-1);
+       //System.out.println(lastCharacter);
+       
+       if(lastCharacter!=null && (lastCharacter.equals("-") || lastCharacter.equals(" "))){
+          //System.out.println("last character removed: " + lastCharacter);
+          long startOffset = ann.getStartNode().getOffset().longValue();
+          long endOffset = startOffset + text.length()-1;
+          String type = ann.getType();
+
+          FeatureMap features = ann.getFeatures();
+	  addAnn(outputAS, startOffset, endOffset, type, features);
+          outputAS.remove(ann);
+       }
+     }
+  }catch (Exception e){
+      e.printStackTrace();
+  }
+ 
+}
+

@@ -1,0 +1,34 @@
+Imports: {
+import static gate.Utils.*;
+}
+
+Phase: Remove_Biodiv_from_Annie_Ann
+Input: Person Location Organization Environment
+
+Options: control = all
+
+Rule: RemoveBiodivFromAnnieAnn
+(
+ {Environment within Organization} | {Environment within Location} | {Environment within Person}
+):mention
+-->
+:mention{
+
+	    //get the bindings
+ 	    AnnotationSet set = bindings.get("mention");
+            Annotation env = set.iterator().next();
+             try{
+			
+			FeatureMap oldMap = env.getFeatures();
+			String content = doc.getContent().getContent(env.getStartNode().getOffset(),env.getEndNode().getOffset()).toString();
+                        //System.out.println(content + " removed from Environment set");
+			outputAS.remove(env);
+		}
+		catch(InvalidOffsetException e){
+			e.printStackTrace();
+		}
+            //outputAS.remove(ann);
+    
+			
+
+}
