@@ -8,4 +8,4 @@ This repository provide contains the QEMP corpus, a metadata corpus from biodive
 * [Pipeline](../master/Pipeline) *contains the text mining pipeline to annotate biological Named Entities.*
 * [Evaluation](../master/Evaluation) *contains the python script to evaluate the pipeline with the gold standard and the evaluation results.*
 * [QEMP Corpus](../master/QEMP) *contains the raw metadata xml files per data repository and the gold standard in json format.*
-* [Ontological Issues List](../master/conflicts and annotations) *provides a list with missing ontological entries and ontological conflicts.*
+* [Ontological Issues List](../master/conflicts_missing_annotations.md) *provides a list with missing ontological entries and ontological conflicts.*
