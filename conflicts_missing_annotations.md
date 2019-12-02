@@ -31,6 +31,10 @@ The follwing list provides missing annotations. These annotations are present in
 	* bioirrigation
 	* bioturbation
 	* rainfall
+	* adaptive radiation
+	* oxygen uptake (ENVO only provides uptake)
+	* nitrogen uptake (ENVO only provides uptake)
+	* carbon uptake (ENVO only provides uptake)
 	  
 * Quality: 
 	* warm
@@ -48,3 +52,4 @@ Following are the conflict cases. A different entity type was assigned in the go
 * wood (in ENVO Environment, in gold standard Material)
 * weather (in ENVO Quality, in gold standard both Environment and Process)
 * biomass (in ENVO Material, in gold standard both Material and Quality)
+* climate (in ENVO environmental disposition, in gold standard PROCESS)
