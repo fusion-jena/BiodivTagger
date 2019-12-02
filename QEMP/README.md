@@ -1,5 +1,5 @@
 # QEMP Corpus
-This folder contains 50 public metadata files from five data repositories in XML format. Each folder contains 10 unlabeled files in XML format and a JSON file containing the plain text with annotations. The annotation contains indices denoting the start and end of an annotation.
+This folder contains 50 public metadata files from five data repositories in XML format. Each folder contains 10 unlabeled files in XML format and a JSON file containing the plain text with annotations. The annotations contain indices denoting the start and end of an annotation.
 
 # Entity Types
 
