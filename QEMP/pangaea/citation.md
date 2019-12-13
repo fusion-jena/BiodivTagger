@@ -2,7 +2,7 @@
 
 | Dataset ID       | Citation |
 | ------------- |:-------------:| 
-|[897419](http://ws.pangaea.de/oai/provider?verb=GetRecord&identifier=oai:pangaea.de:doi:10.1594/PANGAEA.897419&metadataPrefix=pan_md)||
+|[897419](http://ws.pangaea.de/oai/provider?verb=GetRecord&identifier=oai:pangaea.de:doi:10.1594/PANGAEA.897419&metadataPrefix=pan_md)|Braeckman, U., Pasotti, F., et al. (2019): Carbon and nitrogen turnover during a mesocosm experiment with addition of Palmaria decipiens and Desmarestia anceps to sediments from Potter Cove. Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research, Bremerhaven, PANGAEA, https://doi.org/10.1594/PANGAEA.897419,|
 |[897964](http://ws.pangaea.de/oai/provider?verb=GetRecord&identifier=oai:pangaea.de:doi:10.1594/PANGAEA.897964&metadataPrefix=pan_md)||
 |[898301](http://ws.pangaea.de/oai/provider?verb=GetRecord&identifier=oai:pangaea.de:doi:10.1594/PANGAEA.898301&metadataPrefix=pan_md)||
 |[898616](http://ws.pangaea.de/oai/provider?verb=GetRecord&identifier=oai:pangaea.de:doi:10.1594/PANGAEA.898616&metadataPrefix=pan_md)||
