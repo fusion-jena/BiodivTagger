@@ -18,7 +18,7 @@
 	<TD align="left">Annotator 2</TD>
 </TR>
 </TABLE>
-<BR><BR><BR>
+<BR>
 Recall: 0,8571<br>
 Precision: 0,7826<br>
 F-measure: 0,8182<br>
@@ -45,8 +45,7 @@ False positives: 5<br>
 	<TD align="left">Annotator 2</TD>
 </TR>
 </TABLE>
-
-<BR><BR><BR>
+<BR>
 Recall: 0,3333<br>
 Precision: 1<br>
 F-measure: 0,5<br>
