@@ -1,6 +1,6 @@
-# BiodivTagger Repository
+# BiodivTagger and QEMP corpus Repository
 
-This repository provide contains the QEMP corpus, a metadata corpus from biodiversity research data with 50 metadata files from 5 different repositories and biodiversity related projects as well as the BiodivTagger, a text mining pipeline that extracts biological entities.
+This repository contains the QEMP corpus, a metadata corpus from biodiversity research with 50 metadata files selected from 5 different repositories and biodiversity related projects as well as the BiodivTagger, a text mining pipeline that extracts biological entities.
 
 
 ## Structure
@@ -14,3 +14,7 @@ This repository provide contains the QEMP corpus, a metadata corpus from biodive
 
 * [Pipeline](../master/Pipeline) *The BiodivTagger is distributed under the [GNU GPL v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)*
 * [QEMP Corpus](../master/QEMP) *The QEMP corpus is distributed under the [CC-BY-4.0](https://creativecommons.org/licenses/by-nc/4.0/)*
+
+## Citation
+
+Löffler, F., Abdelmageed, N., Babalou, S., Kaur, P., König-Ries, B.: *Tag Me If You Can! Semantic Annotation of Biodiversity Metadata with the QEMP Corpus and the BiodivTagger *, Language Resources and Evaluation Conference (LREC), Marseille, France, 2020
