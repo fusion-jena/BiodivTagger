@@ -17,4 +17,4 @@ This repository contains the QEMP corpus, a metadata corpus from biodiversity re
 
 ## Citation
 
-Löffler, F., Abdelmageed, N., Babalou, S., Kaur, P., König-Ries, B.: *Tag Me If You Can! Semantic Annotation of Biodiversity Metadata with the QEMP Corpus and the BiodivTagger *, Language Resources and Evaluation Conference (LREC), Marseille, France, 2020
+Löffler, F., Abdelmageed, N., Babalou, S., Kaur, P., König-Ries, B.: *Tag Me If You Can! Semantic Annotation of Biodiversity Metadata with the QEMP Corpus and the BiodivTagger*, Language Resources and Evaluation Conference (LREC), Marseille, France, 2020
