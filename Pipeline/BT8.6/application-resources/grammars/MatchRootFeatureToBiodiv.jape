@@ -1,0 +1,179 @@
+Imports: {
+import static gate.Utils.*;
+}
+
+Phase: Match_Root_To_Biodiv
+Input: Token
+
+Options: control = appelt
+
+Rule: MatchRootToBiodiv
+(
+{Token.affix == "s"} 
+):root
+-->
+:root{
+			//get the root feature - it contains the root of the term
+ 			AnnotationSet set = bindings.get("root");
+            Annotation rootAnn = set.iterator().next();
+			
+			//get the content of the root feature
+			String contentRoot = rootAnn.getFeatures().get("root").toString().toLowerCase();
+	        long offsetR = start(rootAnn);
+	        long endOffsetR = end(rootAnn);  
+	        //System.out.println("ContentRoot: " + contentRoot);
+			
+			//get the BIODIV set
+			AnnotationSet biodivSet = doc.getAnnotations("BIODIV");
+			
+			//remember which strings of the annotations where already matched
+			//Hashtable<Annotation, term>
+			HashMap<String,Set> annCreated = new HashMap<String, Set>();
+			
+			// -------------------------------------------------------
+			//get Environment annotations
+			AnnotationSet envSet = biodivSet.get("Environment");
+			Set<String> envContentSet = new HashSet<>();
+			
+			try{
+				for(Annotation env : envSet){
+				
+					//get the content of the Environment annotation
+					String contentEnv = doc.getContent().getContent(env.getStartNode().getOffset(),env.getEndNode().getOffset()).toString().toLowerCase();
+
+					//if the (content of the) root feature matches the content of the Environment annotation
+					//add a new Environment annotation to the string with the matching root feature
+					if(contentRoot.equals(contentEnv)){
+					    //System.out.println(envContentSet.contains(contentEnv));
+						if(!envContentSet.contains(contentEnv)){
+							//System.out.println(contentEnv);
+
+							FeatureMap envFeatures = env.getFeatures();
+							addAnn(outputAS, offsetR, endOffsetR, "Environment", envFeatures);
+						
+							//remember that an annotation has already been created
+							envContentSet.add(contentEnv);
+							
+						}
+					}
+				
+				}
+				annCreated.put("Environment", envContentSet);
+			}
+			catch (Exception e){
+					e.printStackTrace();
+			}
+			
+			// -------------------------------------------------------
+			//get Process annotations
+			AnnotationSet processSet = biodivSet.get("Process");
+			Set<String> proContentSet = new HashSet<>();
+			
+			//remember which strings of the Process annotations where already matched
+			HashMap<String, String> processCreated = new HashMap<String, String>();
+			try{
+				for(Annotation pro : processSet){
+				
+					//get the content of the Process annotation
+					String contentPro = doc.getContent().getContent(pro.getStartNode().getOffset(),pro.getEndNode().getOffset()).toString().toLowerCase();
+
+					//if the (content of the) root feature matches the content of the Process annotation
+					//add a new Process annotation to the string with the matching root feature
+					if(contentRoot.equals(contentPro)){
+					    
+						//System.out.println(proContentSet.contains(contentPro));
+						if(!proContentSet.contains(contentPro)){
+							//System.out.println(contentPro);
+
+							FeatureMap proFeatures = pro.getFeatures();
+							addAnn(outputAS, offsetR, endOffsetR, "Process", proFeatures);
+						
+							//remember that an annotation has already been created
+							proContentSet.add(contentPro);
+						}
+						
+					}
+				
+				}
+				annCreated.put("Process", proContentSet);
+			}
+			catch (Exception e){
+					e.printStackTrace();
+			}
+			
+			// -------------------------------------------------------
+			//get Material annotations
+			AnnotationSet materialSet = biodivSet.get("Material");
+			Set<String> matContentSet = new HashSet<>();
+			
+			//remember which strings of the Material annotations where already matched
+			HashMap<String, String> materialCreated = new HashMap<String, String>();
+			try{
+				for(Annotation mat : materialSet){
+				
+					//get the content of the Material annotation
+					String contentMat = doc.getContent().getContent(mat.getStartNode().getOffset(),mat.getEndNode().getOffset()).toString().toLowerCase();
+
+					//if the (content of the) root feature matches the content of the Material annotation
+					//add a new Material annotation to the string with the matching root feature
+					if(contentRoot.equals(contentMat)){
+					    
+						//System.out.println(matContentSet.contains(contentMat));
+						if(!matContentSet.contains(contentMat)){
+							//System.out.println(contentMat);
+
+							FeatureMap matFeatures = mat.getFeatures();
+							addAnn(outputAS, offsetR, endOffsetR, "Material", matFeatures);
+						
+							//remember that an annotation has already been created
+							matContentSet.add(contentMat);
+						}
+						
+					}
+				
+				}
+				annCreated.put("Material", matContentSet);
+			}
+			catch (Exception e){
+					e.printStackTrace();
+			}
+			
+			// -------------------------------------------------------
+			//get Quality annotations
+			AnnotationSet qualitySet = biodivSet.get("Quality");
+			Set<String> qualityContentSet = new HashSet<>();
+			
+			//remember which strings of the Quality annotations where already matched
+			HashMap<String, String> qualityCreated = new HashMap<String, String>();
+			try{
+				for(Annotation quality : qualitySet){
+				
+					//get the content of the Quality annotation
+					String contentQuality = doc.getContent().getContent(quality.getStartNode().getOffset(),quality.getEndNode().getOffset()).toString().toLowerCase();
+
+					//if the (content of the) root feature matches the content of the Quality annotation
+					//add a new Quality annotation to the string with the matching root feature
+					if(contentRoot.equals(contentQuality)){
+					    
+						//System.out.println(qualityContentSet.contains(contentQuality));
+						if(!qualityContentSet.contains(contentQuality)){
+							//System.out.println(contentQuality);
+
+							FeatureMap qualityFeatures = quality.getFeatures();
+							addAnn(outputAS, offsetR, endOffsetR, "Quality", qualityFeatures);
+						
+							//remember that an annotation has already been created
+							qualityContentSet.add(contentQuality);
+						}
+						
+					}
+				
+				}
+				annCreated.put("Quality", qualityContentSet);
+			}
+			catch (Exception e){
+					e.printStackTrace();
+			}
+			
+
+}

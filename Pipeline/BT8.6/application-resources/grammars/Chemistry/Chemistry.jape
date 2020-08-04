@@ -1,0 +1,72 @@
+Imports: {
+import static gate.Utils.*;
+}
+
+Phase: Chemistry
+Input: ChemicalCompound ChemicalElement ChemicalIon Lookup LatLon
+
+Options: control = appelt
+
+
+Rule: LatLon
+Priority: 25
+(
+{ChemicalCompound within LatLon} | {ChemicalElement within LatLon} | {ChemicalIon within LatLon}
+):latlon
+-->
+:latlon.LatLonInChemistry = {}
+
+Rule: ChemistryToUrlAnnotation
+Priority: 20
+(
+{ChemicalCompound} | {ChemicalElement} | {ChemicalIon} 
+
+):mention
+-->
+:mention{
+	
+           AnnotationSet set = bindings.get("mention");
+           Annotation ChemAnn = set.iterator().next();
+   
+		   try{
+			   String contentChem = doc.getContent().getContent(ChemAnn.getStartNode().getOffset(),ChemAnn.getEndNode().getOffset()).toString();			
+		 
+			   //get the BIODIV set
+				AnnotationSet biodivSet = doc.getAnnotations("BIODIV");
+				Set<String> chebiContentSet = new HashSet<>();
+				
+				//get CHEBI annotations
+				AnnotationSet chebiSet = biodivSet.get("CHEBI");
+				
+				
+					for(Annotation chebiAnn : chebiSet){
+
+						String contentChebi = doc.getContent().getContent(chebiAnn.getStartNode().getOffset(),chebiAnn.getEndNode().getOffset()).toString();
+
+						//erwerwer
+						if(contentChem.equals(contentChebi)){
+
+							if(!chebiContentSet.contains(contentChebi)){
+								//System.out.println(contentChebi);
+
+								FeatureMap chebiFeatures = chebiAnn.getFeatures();
+								addAnn(outputAS, ChemAnn.getStartNode().getOffset(),ChemAnn.getEndNode().getOffset(), "Material", chebiFeatures);
+							
+								//remember that an annotation has already been created
+								chebiContentSet.add(contentChebi);
+								
+							}
+						}
+					
+					}
+			}
+			catch (Exception e){
+					e.printStackTrace();
+			}
+			
+			//FeatureMap oldMap = ChemAnn.getFeatures();
+			//outputAS.add(set.firstNode(), set.lastNode(), "Material", oldMap);
+		
+		
+	  //inputAS.remove(ChemAnn);	
+}

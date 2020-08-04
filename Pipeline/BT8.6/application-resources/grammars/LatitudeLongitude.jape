@@ -1,0 +1,28 @@
+Imports: { 
+import static gate.Utils.*;
+}
+
+Phase: Latitude_Longitude
+Input: Token SpaceToken
+
+Options: control = appelt
+
+Rule: FullLatLon
+Priority: 25
+(
+{Token.kind == "number"}({Token.kind == "symbol"} | {Token.type == "other"}){Token.kind == "number"}{Token.kind == "punctuation"}({Token.kind == "punctuation"})?{Token.kind == "number"}({Token.kind == "punctuation"} | {Token.kind == "symbol"}){Token.kind == "number"}(({Token.kind == "punctuation"}({SpaceToken})?({Token.string == "N"} | {Token.string == "E"})) | ({Token.string == "'N"} | {Token.string == "'E"}) )
+
+):mention
+-->
+:mention.LatLon = { rule ="FullLatLon", kind = "LatLon"}
+
+
+Rule: ShortLatLon
+Priority:20
+(
+{Token.kind == "number"}({Token.kind == "symbol"} | {Token.type == "other"}){Token.kind == "number"}{Token.kind == "punctuation"}({Token.kind == "number"}{Token.kind == "punctuation"})?({SpaceToken})?({Token.string == "N"} | {Token.string == "E"} | {Token.string == "W"} | {Token.string == "S"})?
+
+):mention
+-->
+:mention.LatLon = { rule ="ShortLatLon", kind = "LatLon"}
+

@@ -1,0 +1,39 @@
+Imports: { 
+import static gate.Utils.*;
+}
+
+Phase: Identify_Plural
+Input: Token 
+
+Options: control = appelt
+
+Rule: IdentifyPlural
+(
+  {Token.affix == "s", Token.category != "VBZ", Token.kind != "punctuation"} 
+):mention
+-->
+:mention{
+  AnnotationSet set = bindings.get("mention");
+  Annotation currentAnn = set.iterator().next();
+ FeatureMap oldMap = currentAnn.getFeatures();
+
+  String root = (String) currentAnn.getFeatures().get("root");
+  String rootString = (String) currentAnn.getFeatures().get("string");
+  //System.out.println(rootString);
+  //System.out.println(root);
+  
+
+  long startOffset = currentAnn.getStartNode().getOffset().longValue();
+  long endOffset = startOffset + root.length();
+   
+  long actualLength = endOffset - startOffset;
+  //long lengthDifference = actualLength - root.length();
+  
+  long newStartOffset = startOffset;
+  long newEndOffset = newStartOffset + root.length();
+ 
+  //FeatureMap params = Factory.newFeatureMap();
+  addAnn(outputAS, currentAnn.getStartNode().getOffset(), currentAnn.getEndNode().getOffset(), "Root", oldMap);
+ 
+}
+

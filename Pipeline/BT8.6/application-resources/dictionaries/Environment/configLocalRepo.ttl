@@ -1,0 +1,51 @@
+#
+# Sesame configuration template for a owlim repository
+#
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rep: <http://www.openrdf.org/config/repository#>.
+@prefix sr: <http://www.openrdf.org/config/repository/sail#>.
+@prefix sail: <http://www.openrdf.org/config/sail#>.
+@prefix owlim: <http://www.ontotext.com/trree/owlim#>.
+@prefix lkbg: <http://www.ontotext.com/lkb_gazetteer#>.
+@prefix obo: <http://purl.obolibrary.org/obo#>.
+@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>.
+
+[] a rep:Repository ;
+   rep:repositoryID "owlim" ;
+   rdfs:label "Sample KB Repository" ;
+   rep:repositoryImpl [
+      rep:repositoryType "openrdf:SailRepository" ;
+      sr:sailImpl [
+         sail:sailType "swiftowlim:Sail" ;
+         owlim:ruleset "owl-horst-optimized" ;
+         owlim:noPersist "true" ;
+         owlim:storage-folder "owlim-storage" ;
+         owlim:base-URL "http://gfbio-git.inf-bb.uni-jena.de/environment#" ;
+         #owlim:new-triples-file "new-triples-file.nt" ;
+         owlim:entity-index-size "20000000" ;
+         owlim:repository-type "in-memory-repository" ;
+         #owlim:jobsize "200" ;
+		 #New resource - add line to 'imports' and a corresponding line to 'defaultNS'.
+		 #Order and count of both 'imports' and 'defaultNS' matters!
+		 owlim:imports 
+                       "%relpath%/kb/owl/envo.owl;" ;
+		 owlim:defaultNS 
+                       "http://gfbio-git.inf-bb.uni-jena.de/environment#;"         
+      ]
+   ].
+   
+# The gazetteer-specific options follow.
+lkbg:DictionaryConfiguration 
+   # Whether the gazeetteer will be sensitive to case.
+   # Possible values: caseinsensitive, casesensitive, casesensitiveAllUpper
+   lkbg:caseSensitivity: "caseinsensitive" ;
+  
+   # Whether the gazetteer will cache the dictionary after loading it from the data source.   
+   # Put "enabled" to enable the cache, any other values will disable it.
+   lkbg:caching "enabled" .
+   
+   # The cache will be automatically reloaded on initialization if the configuration have been    
+   # modified since the last initialization. However, changes in the underlying datastore 
+   # can't be detected and the cache will not be automatically reloaded in that case. 
+   # Thus, if you expect changes in your datastore, disable the cache, or make use
+   # of the modifications API.

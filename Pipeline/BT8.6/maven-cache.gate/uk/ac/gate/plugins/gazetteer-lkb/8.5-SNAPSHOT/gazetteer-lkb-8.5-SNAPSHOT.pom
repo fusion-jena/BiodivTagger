@@ -1,0 +1,158 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>uk.ac.gate</groupId>
+		<artifactId>gate-plugin-base</artifactId>
+		<!-- this should be the version of GATE you wish to build against -->
+		<version>8.5-SNAPSHOT</version>
+
+		<!-- this forces the parent to always be resolved from the repo -->
+		<relativePath></relativePath>
+	</parent>
+
+	<!-- this is the description of this plugin -->
+	<groupId>uk.ac.gate.plugins</groupId>
+	<artifactId>gazetteer-lkb</artifactId>
+	<version>8.5-SNAPSHOT</version>
+
+	<name>Gazetteer LKB</name>
+	<description>A Large Knowledge Based (LKB) Gazetteer</description>
+
+	<licenses>
+		<license>
+			<!-- this is the license we usually use for plugins but feel free to change 
+				this if you feel a different license would be more suitable for your plugin -->
+			<name>GNU Lesser General Public License (LGPL), Version 3</name>
+			<url>http://www.gnu.org/licenses/lgpl-3.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<organization>
+		<name>GATE</name>
+		<url>http://gate.ac.uk</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<id>gate-team</id>
+			<name>GATE Team</name>
+			<email>gate-developers@lists.sourceforge.net</email>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git://github.com/GateNLP/gateplugin-Gazetteer_LKB.git</connection>
+		<developerConnection>scm:git:git@github.com:GateNLP/gateplugin-Gazetteer_LKB.git</developerConnection>
+		<url>https://github.com/GateNLP/gateplugin-Gazetteer_LKB</url>
+	</scm>
+
+
+	<dependencies>
+
+		<dependency>
+			<groupId>uk.ac.gate.plugins</groupId>
+			<artifactId>annie</artifactId>
+			<version>8.5-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- add any other libraries your plugin depends on. Any other GATE plugins 
+			you depend on at compile time should use the provided scope -->
+		<dependency>
+			<groupId>com.ontotext.kim</groupId>
+			<artifactId>kim-util</artifactId>
+			<version>3.0-RC5</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.ontotext</groupId>
+					<artifactId>platform-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.ontotext</groupId>
+					<artifactId>rdfdb-sesame</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.openrdf.sesame</groupId>
+					<artifactId>sesame-runtime</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.thoughtworks.xstream</groupId>
+					<artifactId>xstream</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sf.trove4j</groupId>
+			<artifactId>trove4j</artifactId>
+			<!-- This specific version of trove is selected for BigOWLIM 3.4 compatibility -->
+			<version>2.0.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openrdf.sesame</groupId>
+			<artifactId>sesame-runtime</artifactId>
+			<version>2.7.9</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Optional dependency of sesame-onejar; Required here for HTTPRepository 
+			and SPARQL Endpoint support -->
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>2.5.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<!-- Scope is not "test" due to some functional tests present in src/main -->
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>public</id>
+			<name>Ontotext Public Repository</name>
+			<url>http://maven.ontotext.com/content/repositories/public</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+</project>

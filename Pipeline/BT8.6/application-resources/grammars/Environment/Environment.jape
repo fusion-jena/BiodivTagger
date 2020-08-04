@@ -1,0 +1,24 @@
+Imports: {
+import static gate.Utils.*;
+}
+
+Phase: Environment
+Input: Lookup Root Token
+
+Options: control = all
+
+Rule: EnvironmentToUrlAnnotation
+Priority: 20
+(
+{Lookup, Token.category == NN, !Root} | {Lookup, Token.category == NNS, !Root} | {Lookup, Token.category == JJ, !Root} 
+):mention
+-->
+:mention.Environment = {class = :mention.Lookup.class, inst = :mention.Lookup.inst}
+
+Rule: Root
+Priority: 25
+(
+{Lookup, Root}
+):mention
+-->
+:mention.Environment = {class = :mention.Lookup.class, inst = :mention.Lookup.inst, rule = "Root"}

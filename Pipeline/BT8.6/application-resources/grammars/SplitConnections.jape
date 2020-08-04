@@ -1,0 +1,170 @@
+Imports: { 
+import static gate.Utils.*;
+}
+
+Phase: SplitConnections
+Input: Environment Material Quality Process 
+
+Options: control = brill
+
+
+Rule: SplitEnvironments
+(
+{Environment} 
+
+):mention
+-->
+:mention{
+  AnnotationSet set = bindings.get("mention");
+  Annotation ann = set.iterator().next();
+  long offset = start(ann);
+  long endOffset = end(ann);
+  
+  try{
+	String connections = ann.getFeatures().get("connections").toString();
+	String inst = ann.getFeatures().get("inst").toString();
+
+    String[] connArray = connections.split(",");
+	
+	if(connArray!=null && connArray.length > 0){
+		
+			for( int i = 0; i < connArray.length; i++)
+			{
+				String element = connArray[i];
+
+				if(!element.equals(inst)){
+					FeatureMap features = Factory.newFeatureMap();  
+					features.put("inst",inst);
+					features.put("broader",element);
+					features.put("start",offset);
+					features.put("end",endOffset);
+					addAnn(outputAS, offset, endOffset, "Environment", features);
+					inputAS.remove(ann);
+				}
+	  
+			}
+     }
+  }catch (Exception e){
+      e.printStackTrace();
+  }
+ 
+}
+
+Rule: SplitMaterial
+(
+{Material} 
+
+):mention
+-->
+:mention{
+  AnnotationSet set = bindings.get("mention");
+  Annotation ann = set.iterator().next();
+  long offset = start(ann);
+  long endOffset = end(ann);
+  
+  try{
+	String connections = ann.getFeatures().get("connections").toString();
+	String inst = ann.getFeatures().get("inst").toString();
+
+    String[] connArray = connections.split(",");
+	
+	if(connArray!=null && connArray.length > 0){
+		
+			for( int i = 0; i < connArray.length; i++)
+			{
+				String element = connArray[i];
+
+				if(!element.equals(inst)){
+					FeatureMap features = Factory.newFeatureMap();  
+					features.put("broader",element);
+					features.put("inst",inst);
+					addAnn(outputAS, offset, endOffset, "Material", features);
+					inputAS.remove(ann);
+				}
+	  
+			}
+     }
+  }catch (Exception e){
+      e.printStackTrace();
+  }
+ 
+}
+Rule: SplitProcess
+(
+{Process} 
+
+):mention
+-->
+:mention{
+  AnnotationSet set = bindings.get("mention");
+  Annotation ann = set.iterator().next();
+  long offset = start(ann);
+  long endOffset = end(ann);
+  
+  try{
+	String connections = ann.getFeatures().get("connections").toString();
+	String inst = ann.getFeatures().get("inst").toString();
+
+    String[] connArray = connections.split(",");
+	
+	if(connArray!=null && connArray.length > 0){
+		
+			for( int i = 0; i < connArray.length; i++)
+			{
+				String element = connArray[i];
+
+				if(!element.equals(inst)){
+					FeatureMap features = Factory.newFeatureMap();  
+					features.put("broader",element);
+					features.put("inst",inst);
+					addAnn(outputAS, offset, endOffset, "Process", features);
+					inputAS.remove(ann);
+				}
+	  
+			}
+     }
+  }catch (Exception e){
+      e.printStackTrace();
+  }
+ 
+}
+
+Rule: SplitEnvironments
+(
+{Quality} 
+
+):mention
+-->
+:mention{
+  AnnotationSet set = bindings.get("mention");
+  Annotation ann = set.iterator().next();
+  long offset = start(ann);
+  long endOffset = end(ann);
+  
+  try{
+	String connections = ann.getFeatures().get("connections").toString();
+	String inst = ann.getFeatures().get("inst").toString();
+
+    String[] connArray = connections.split(",");
+	
+	if(connArray!=null && connArray.length > 0){
+		
+			for( int i = 0; i < connArray.length; i++)
+			{
+				String element = connArray[i];
+
+				if(!element.equals(inst)){
+					FeatureMap features = Factory.newFeatureMap();  
+					features.put("broader",element);
+					features.put("inst",inst);
+					addAnn(outputAS, offset, endOffset, "Quality", features);
+					inputAS.remove(ann);
+				}
+	  
+			}
+     }
+  }catch (Exception e){
+      e.printStackTrace();
+  }
+ 
+}
