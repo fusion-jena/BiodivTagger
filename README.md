@@ -1,5 +1,7 @@
 # BiodivTagger and QEMP corpus Repository
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7385639.svg)](https://doi.org/10.5281/zenodo.7385639)
+
 This repository contains the QEMP corpus, a metadata corpus from biodiversity research with 50 metadata files selected from 5 different repositories and biodiversity related projects as well as the BiodivTagger, a text mining pipeline that extracts biological entities.
 
 
